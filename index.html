@@ -75,13 +75,13 @@ h1,h2,h3,p{margin:0}
 
 /* Hero */
 .hero{display:grid;gap:28px;padding-top:clamp(12px,4vw,40px);padding-bottom:clamp(56px,10vw,120px)}
-.hero-h{font-size:clamp(3.6rem,19.5vw,12rem);font-stretch:62%;font-weight:250;line-height:.88;letter-spacing:-.012em}
+.hero-h{font-size:min(clamp(3.4rem,3.46rem + 4.21vw,7.25rem),calc((100vw - 2 * var(--gut)) / 4.6));font-stretch:62%;font-weight:250;line-height:.94;letter-spacing:-.012em}
 .hero-h span{display:block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .hero-h span:nth-child(2){animation-delay:.09s}
 .hero-h span:nth-child(3){animation-delay:.18s}
 @keyframes rise{from{opacity:0;transform:translateY(.32em)}to{opacity:1;transform:none}}
 .ast{color:var(--accent);text-decoration:none;font-weight:400;margin-left:.04em}
-.lede{font-size:clamp(1.22rem,3.8vw,1.62rem);line-height:1.38;max-width:30ch}
+.lede{font-size:clamp(1.22rem,1.07rem + 0.62vw,1.625rem);line-height:1.38;max-width:30ch}
 .titles{margin-top:18px;font-size:1rem;font-weight:600;font-stretch:85%;color:var(--muted);max-width:44ch}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 1.5rem;border:0;border-radius:999px;background:var(--btn-bg);color:var(--btn-fg);font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;transition:transform .15s ease}
@@ -92,18 +92,18 @@ h1,h2,h3,p{margin:0}
 .hero-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 0;border-radius:999px 999px 0 0}
 .note{font-size:.92rem;line-height:1.5;color:var(--muted);max-width:52ch}
 @media (min-width:880px){
-  .hero{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:56px;row-gap:44px;align-items:start}
-  .hero-h{grid-column:1 / -1}
-  .hero-body{grid-column:1;padding-top:8px}
-  .hero-photo{grid-column:2;grid-row:2 / span 2;justify-self:end;width:100%}
-  .hero .note{grid-column:1;align-self:end}
+  .hero{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);column-gap:clamp(32px,4vw,56px);row-gap:40px;align-items:start}
+  .hero-h{grid-column:1;grid-row:1}
+  .hero-body{grid-column:1;grid-row:2;padding-top:0}
+  .hero-photo{grid-column:2;grid-row:1 / span 3;justify-self:end;align-self:start;width:100%}
+  .hero .note{grid-column:1;grid-row:3;align-self:end}
 }
 
 /* Shared section type */
 .sec{padding-top:clamp(64px,12vw,140px);padding-bottom:clamp(64px,12vw,140px)}
-.h2{font-size:clamp(2.8rem,13vw,7.2rem);font-stretch:66%;font-weight:300;line-height:.92;letter-spacing:-.01em;max-width:14ch}
-.intro{font-size:clamp(1.15rem,3.2vw,1.45rem);line-height:1.42;max-width:38ch;margin-top:24px}
-.h3{font-size:clamp(1.6rem,5.6vw,2.5rem);font-stretch:78%;font-weight:700;line-height:1.05;letter-spacing:-.005em}
+.h2{font-size:clamp(2.4rem,2.42rem + 3.14vw,5.25rem);font-stretch:66%;font-weight:300;line-height:.96;letter-spacing:-.01em;max-width:14ch;text-wrap:balance}
+.intro{font-size:clamp(1.15rem,1.04rem + 0.46vw,1.45rem);line-height:1.42;max-width:38ch;margin-top:24px}
+.h3{font-size:clamp(1.6rem,1.44rem + 0.76vw,2.125rem);font-stretch:78%;font-weight:700;line-height:1.1;letter-spacing:-.005em}
 .tag{display:block;margin-top:6px;font-size:.95rem;font-stretch:100%;font-weight:500;letter-spacing:0;color:var(--accent)}
 .rows{margin-top:clamp(40px,7vw,80px);display:grid;gap:clamp(34px,5vw,56px)}
 .row p{margin-top:10px;max-width:46ch}
@@ -122,7 +122,7 @@ h1,h2,h3,p{margin:0}
 
 /* Evidence */
 .proof-head{display:grid;gap:32px;margin-top:clamp(36px,6vw,64px)}
-.big-line{font-size:clamp(2.1rem,8.4vw,4rem);font-stretch:72%;font-weight:300;line-height:1.04;max-width:20ch}
+.big-line{font-size:clamp(2.1rem,1.71rem + 1.71vw,3.25rem);font-stretch:72%;font-weight:300;line-height:1.08;max-width:20ch;text-wrap:balance}
 .big-line b{font-weight:800}
 .proof-photo{margin:0;max-width:300px}
 .proof-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%}
@@ -143,7 +143,7 @@ h1,h2,h3,p{margin:0}
 .chip{min-height:46px;padding:0 18px;border:0;border-radius:999px;background:transparent;box-shadow:inset 0 0 0 1.5px var(--chip-ring);font-size:1.08rem;font-stretch:80%;font-weight:600;cursor:pointer;transition:transform .15s ease,background-color .2s ease,color .2s ease}
 .chip:active{transform:scale(.94)}
 .chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);box-shadow:none}
-.reply{margin-top:24px;min-height:2.3em;font-size:clamp(1.55rem,5.8vw,2.6rem);font-stretch:70%;font-weight:300;line-height:1.08;max-width:22ch}
+.reply{margin-top:24px;min-height:2.3em;font-size:clamp(1.55rem,1.26rem + 1.24vw,2.375rem);font-stretch:70%;font-weight:300;line-height:1.12;max-width:22ch}
 .animals .intro{max-width:44ch;margin-top:32px}
 .animals .intro + .intro{margin-top:16px}
 .animals-photo{margin:0;max-width:420px}
@@ -161,10 +161,10 @@ h1,h2,h3,p{margin:0}
 
 /* A day */
 .day-face{margin-top:clamp(36px,6vw,64px);display:grid;gap:10px;min-height:clamp(250px,56vw,380px);align-content:start}
-.clock{font-size:clamp(5.2rem,30vw,13rem);font-stretch:62%;font-weight:200;line-height:.86;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.clock{font-size:min(clamp(7rem,7.06rem + 1.05vw,8rem),50vw);font-stretch:62%;font-weight:200;line-height:.9;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .clock small{font-size:.24em;font-weight:500;font-stretch:100%;letter-spacing:0;margin-left:.2em;color:var(--block-accent)}
 .day-title{margin-top:14px}
-.day-text{max-width:40ch;font-size:clamp(1.1rem,3.2vw,1.35rem);line-height:1.4}
+.day-text{max-width:40ch;font-size:clamp(1.1rem,1.01rem + 0.38vw,1.35rem);line-height:1.4}
 .day-control{margin-top:28px;max-width:760px}
 .ticks{display:flex;justify-content:space-between;padding:0 13px;margin-top:2px}
 .ticks i{width:8px;height:8px;border-radius:50%;background:var(--track)}
@@ -174,15 +174,15 @@ h1,h2,h3,p{margin:0}
 
 /* Terms */
 .terms-list{list-style:none;margin:clamp(40px,7vw,80px) 0 0;padding:0;display:grid;gap:clamp(10px,2vw,18px);--fp:1}
-.terms-list li{font-size:calc(clamp(2.6rem,13.5vw,7.6rem) * var(--fp));font-stretch:62%;font-weight:200;line-height:.98;letter-spacing:-.01em}
+.terms-list li{font-size:calc(clamp(2.5rem,2.47rem + 3.37vw,5.5rem) * var(--fp));font-stretch:62%;font-weight:200;line-height:.98;letter-spacing:-.01em}
 .tester{margin-top:clamp(32px,5vw,48px);max-width:620px;padding:20px 22px 14px;border-radius:22px;box-shadow:inset 0 0 0 1.5px var(--btn2-ring)}
 .tester .range-label span:last-child{color:var(--muted);font-variant-numeric:tabular-nums}
 .tester-say{margin-top:4px;font-size:.95rem;color:var(--muted);min-height:1.5em}
-.terms-close{margin-top:clamp(40px,6vw,64px);font-size:clamp(1.25rem,3.6vw,1.6rem);line-height:1.38;max-width:34ch;font-weight:500}
+.terms-close{margin-top:clamp(40px,6vw,64px);font-size:clamp(1.25rem,1.12rem + 0.53vw,1.6rem);line-height:1.38;max-width:34ch;font-weight:500}
 .terms .note{margin-top:28px}
 
 /* Where */
-.places{margin-top:28px;font-size:clamp(2.1rem,9vw,4.8rem);font-stretch:66%;font-weight:300;line-height:1.02;max-width:18ch}
+.places{margin-top:28px;font-size:clamp(2.1rem,1.61rem + 2.38vw,3.75rem);font-stretch:66%;font-weight:300;line-height:1.06;max-width:18ch;text-wrap:balance}
 .es{margin-top:clamp(56px,9vw,104px);display:grid;gap:18px;max-width:640px}
 .es p{max-width:46ch}
 
@@ -192,8 +192,8 @@ h1,h2,h3,p{margin:0}
 .card p{font-size:1rem;line-height:1.35}
 .card b{display:block;font-size:1.15rem;font-weight:700;font-stretch:85%}
 .contact-links{margin-top:clamp(36px,6vw,64px);display:grid;gap:clamp(14px,2.4vw,22px)}
-.contact-links a,.contact-links .mail{font-size:clamp(1.55rem,6.4vw,3.6rem);font-stretch:72%;font-weight:300;line-height:1.06;text-decoration:none;color:var(--block-fg);overflow-wrap:anywhere;width:fit-content;max-width:100%}
-.contact-links .mail{margin:8px 0 0;font-size:clamp(1.3rem,5vw,2.2rem);line-height:1.15}
+.contact-links a,.contact-links .mail{font-size:clamp(1.55rem,1.08rem + 2vw,2.875rem);font-stretch:72%;font-weight:300;line-height:1.06;text-decoration:none;color:var(--block-fg);overflow-wrap:anywhere;width:fit-content;max-width:100%}
+.contact-links .mail{margin:8px 0 0;font-size:clamp(1.3rem,1.09rem + 0.88vw,1.875rem);line-height:1.2}
 .contact-links span{display:block;font-size:.95rem;font-stretch:100%;font-weight:500;color:var(--block-accent);margin-bottom:4px}
 .contact-links a:hover{color:var(--block-accent)}
 .contact .actions{margin-top:clamp(32px,5vw,48px)}
@@ -211,6 +211,24 @@ h1,h2,h3,p{margin:0}
 .dock-in a,.dock-in button{display:grid;justify-items:center;gap:3px;min-height:56px;padding:8px 4px;border:0;border-radius:18px;background:transparent;color:var(--bone);text-decoration:none;font-size:.74rem;font-weight:600;cursor:pointer}
 .dock-in a:active,.dock-in button:active{background:rgba(233,227,215,.12)}
 .dock-in svg{width:22px;height:22px}
+@media (min-width:880px){
+  /* sections that previously had no desktop layout: pair the narrow column with its companion block */
+  .day .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:64px;align-items:start}
+  .day .h2,.day .intro,.day .day-control,.day .soft{grid-column:1}
+  .day .day-face{grid-column:2;grid-row:1 / span 4;margin-top:0;align-self:start;min-height:290px}
+
+  .terms{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);column-gap:64px;align-items:start}
+  .terms .h2,.terms .intro,.terms .tester,.terms .terms-close,.terms .note{grid-column:1}
+  .terms .terms-list{grid-column:2;grid-row:1 / span 5;margin-top:0;align-self:start}
+
+  #where .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:64px;align-items:start}
+  #where .h2,#where .intro,#where .places{grid-column:1}
+  #where .es{grid-column:2;grid-row:1 / span 3;margin-top:0;align-self:start}
+
+  #contact .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:64px;align-items:start}
+  #contact .card,#contact .h2,#contact .actions,#contact .soft{grid-column:1}
+  #contact .contact-links{grid-column:2;grid-row:1 / span 4;margin-top:0;align-self:start}
+}
 @media (min-width:880px){.dock{display:none}}
 @media (max-width:879px){.foot{padding-bottom:120px}}
 
@@ -425,7 +443,7 @@ h1,h2,h3,p{margin:0}
   <div class="wrap">
     <h2 class="h2" id="where-title">Ready to move.</h2>
     <p class="intro">Based in Dallas Fort Worth, Texas. Free to relocate, travel and live on site.</p>
-    <p class="places">United States. Spain. Mexico. Costa Rica. Anywhere Spanish is spoken.</p>
+    <p class="places">United&nbsp;States. Spain. Mexico. Costa&nbsp;Rica. Anywhere Spanish is&nbsp;spoken.</p>
     <div class="es" lang="es">
       <h3 class="h3">En español, también.</h3>
       <p>Administro casas y propiedades privadas con rigor corporativo y trato humano. Bilingüe nativa, con raíces en Costa Rica. Disponible para vivir en la propiedad en España, México, Costa Rica y toda América Latina.</p>
